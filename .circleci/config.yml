@@ -19,6 +19,30 @@ jobs:
     steps:
       # Checkout the code as the first step.
       - checkout
+      - run:
+          name: Install Chrome and Dependencies
+          command: |
+            sudo apt-get update
+            sudo apt-get install -y \
+              google-chrome-stable \
+              fonts-liberation \
+              libappindicator3-1 \
+              libasound2 \
+              libatk-bridge2.0-0 \
+              libnspr4 \
+              libnss3 \
+              libxss1 \
+              xdg-utils \
+              libgbm1
+
+      # Descargar e instalar ChromeDriver
+      - run:
+          name: Install ChromeDriver
+          command: |
+            CHROMEDRIVER_VERSION=$(curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE) && \
+            wget -N https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip && \
+            unzip chromedriver_linux64.zip -d /usr/local/bin && \
+            rm chromedriver_linux64.zip
 
       # Use mvn clean and package as the standard maven build phase
       - run:
