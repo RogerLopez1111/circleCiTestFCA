@@ -26,6 +26,10 @@ public class crudTest {
   @Before
   public void setUp() throws Exception {
 	WebDriverManager.chromedriver().setup();
+    options.addArguments("--headless");
+    options.addArguments("--no-sandbox");
+    options.addArguments("--disable-dev-shm-usage");
+
     driver = new ChromeDriver();
     baseUrl = "https://www.google.com/";
     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
