@@ -35,11 +35,11 @@ jobs:
       # Then run your tests!
 
       - run:
-          name: Mockito
+          name: Ejecutando pruebas mockito
           command: mvn -Dtest=com.fca.calidad.service.UserServiceTest test
 
       - run:
-          name: Mockito
+          name: Ejecutando pruebas katalon
           command: mvn -Dtest=crudTest test
       # Then run your tests!
       
