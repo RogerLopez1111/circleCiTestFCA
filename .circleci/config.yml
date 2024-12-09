@@ -36,7 +36,7 @@ jobs:
 
       - run:
           name: Mockito
-          command: mvn -Dtest=UserServiceTest test
+          command: mvn -Dtest=com.fca.calidad.service.UserServiceTest test
       # Then run your tests!
       
       - store_test_results:
