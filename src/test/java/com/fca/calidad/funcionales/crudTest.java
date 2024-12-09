@@ -26,6 +26,8 @@ public class crudTest {
   @Before
   public void setUp() throws Exception {
 	WebDriverManager.chromedriver().setup();
+   
+    ChromeOptions options = new ChromeOptions();
     options.addArguments("--headless");
     options.addArguments("--no-sandbox");
     options.addArguments("--disable-dev-shm-usage");
