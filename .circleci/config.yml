@@ -33,9 +33,7 @@ jobs:
           name: Calculadora
           command: mvn -Dtest-CalculadoraTest test
       # Then run your tests!
-      - run:
-          name: Test
-          command: mvn test
+
       
       - store_test_results:
           path: target/surefire-reports
