@@ -38,6 +38,10 @@ jobs:
           name: Mockito
           command: mvn -Dtest=com.fca.calidad.service.UserServiceTest test
       # Then run your tests!
+       - run:
+          name: Mockito
+          command: mvn -Dtest=crudTest test
+      # Then run your tests!
       
       - store_test_results:
           path: target/surefire-reports
