@@ -37,8 +37,8 @@ jobs:
       - run:
           name: Mockito
           command: mvn -Dtest=com.fca.calidad.service.UserServiceTest test
-      # Then run your tests!
-       - run:
+
+      - run:
           name: Mockito
           command: mvn -Dtest=crudTest test
       # Then run your tests!
