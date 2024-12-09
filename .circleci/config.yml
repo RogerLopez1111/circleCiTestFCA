@@ -34,6 +34,11 @@ jobs:
           command: mvn -Dtest=CalculadoraTest test
       # Then run your tests!
 
+      - run:
+          name: Mockito
+          command: mvn -Dtest=UserServiceTest test
+          command: mvn -Dtest=LoginServiceTest test
+      # Then run your tests!
       
       - store_test_results:
           path: target/surefire-reports
